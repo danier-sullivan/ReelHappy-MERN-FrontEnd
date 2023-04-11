@@ -24,7 +24,7 @@ const TopTen = () => {
         {movies.map(movie => (
           <li key={movie._id}>
             <h3>{movie.title}</h3>
-            <img src={movie.image} alt={movie.title} />
+            <img src={movie.img} alt={movie.title} />
           </li>
         ))}
       </ul>
