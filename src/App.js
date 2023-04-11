@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./pages/Home";
 import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
+import TopTen from './components/TopTen'
 
 function App() {
   return (
