@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const Movies = () => {
-  // const apiKey = process.env.REACT_APP_API_KEY;
-  // const params = useParams();
-  const url = 'localhost:4000';
+  const apiKey = process.env._API_KEY;
+  const params = useParams();
+  const url = 'http://localhost:4000/movies';
   const [movies, setMovies] = React.useState(null);
 
   const getMovies = async () => {
@@ -20,9 +20,15 @@ const Movies = () => {
   const loaded = () => {
     return (
       <div>
-        
-<h1>This is where we keep the movies</h1>
-    
+        <h1>This is where we keep the movies</h1>
+        <ul>
+          {movies.map((movie) => (
+            <li key={movie.id}>
+              <h2>{movie.title}</h2>
+              <img src={movie.img} alt={movie.title} />
+            </li>
+          ))}
+        </ul>
       </div>
     );
   };
@@ -34,6 +40,4 @@ const Movies = () => {
   return movies ? loaded() : loading();
 };
 
-
 export default Movies;
-
