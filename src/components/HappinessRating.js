@@ -15,7 +15,6 @@ const HappinessRating = ({ onRate }) => {
     { value: 4, symbol: "😺" },
     { value: 5, symbol: "😻" },
   ];
-
   return (
     <div className="rating-container">
       <div className="emoji">
@@ -29,9 +28,14 @@ const HappinessRating = ({ onRate }) => {
           </button>
         ))}
       </div>
+      {rating && (
+        <p className="rating-message">Do we want a message that says you rated {rating} out of 5?</p>
+      )}
     </div>
   );
 };
+
+
 
 export default HappinessRating;
 
