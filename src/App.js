@@ -1,19 +1,38 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from "./pages/Home";
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
 import TopTen from './components/TopTen'
 import ViewMovie from './components/ViewMovie'
 
-function App() {
+
+const  App = () => {
+
+  const [movies, setMovies] = useState([]);
+
+  
+    const fetchMovies = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/movies/');
+        const data = await response.json();
+        setMovies(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+  useEffect(() =>{
+    fetchMovies();
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
         <NavBar />
+        <TopTen data={movies}/>
         <Routes>
           {/* path = url, element = what page for that url */}
-          <Route path='/' element={<Home />} />
           <Route path='/Browse' element={<Movies />} />
           <Route path='/:title' element={<ViewMovie />}/>
         </Routes>
