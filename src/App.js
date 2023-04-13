@@ -1,9 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
 import TopTen from './components/TopTen'
+import ViewMovie from './pages/ViewMovie'
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 
 const  App = () => {
@@ -24,20 +27,22 @@ const  App = () => {
   useEffect(() =>{
     fetchMovies();
   }, []);
-
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          {/* path = url, element = what page for that url */}
-          <Route path='/' element ={<Home data={movies}/>} />
-          <Route path='/Browse' element={<Movies data={movies}/>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          {/* <TopTen data={movies}/> */}
+          <Routes>
+            {/* path = url, element = what page for that url */}
+            <Route path="/" element={<Home data={movies}/>}/>
+            <Route path='/:title' element={<ViewMovie movies={movies}/>}/>
+            <Route path='/Browse' element={<Movies />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    );
 }
+
 
 export default App;
 

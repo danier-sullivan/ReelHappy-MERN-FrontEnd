@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import App from '../App.js';
-import Home from '../pages/Home.js';
+import {Link} from "react-router-dom"
 
-const TopTen = ({ data }) => {
+const TopTen = ({ data}) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,10 +16,10 @@ const TopTen = ({ data }) => {
     <div>
       <h2>Top 10/ Most Recent</h2>
       <ul>
-        {movies.map((movie) => (
+        {movies.map(movie => (
           <li key={movie._id}>
             <h3>{movie.title}</h3>
-            <img src={movie.img} alt={movie.title} />
+            <Link to={`/${movie.title}`}><img src={movie.img} alt={movie.title} /></Link>
           </li>
         ))}
       </ul>
