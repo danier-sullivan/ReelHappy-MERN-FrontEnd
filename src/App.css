@@ -1,1 +1,19 @@
-Test
+ 
+body {
+  background-image: "moviePic.jpg";
+  background-color: #e5383b;
+  justify-content: center;
+}
+.container {
+  justify-content: space-evenly;
+}
+.nav {
+  background-color: #161a1d;
+  text-shadow: #b1a7a6;
+}
+div {
+  color: #ffffff;
+}
+h2 {
+  
+}
