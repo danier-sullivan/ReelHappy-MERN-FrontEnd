@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
 import TopTen from './components/TopTen'
-
+import Home from './pages/Home';
 
 const  App = () => {
 
@@ -29,10 +29,10 @@ const  App = () => {
     <BrowserRouter>
       <div className="App">
         <NavBar />
-        <TopTen data={movies}/>
         <Routes>
           {/* path = url, element = what page for that url */}
-          <Route path='/Browse' element={<Movies />} />
+          <Route path='/' element ={<Home data={movies}/>} />
+          <Route path='/Browse' element={<Movies data={movies}/>} />
         </Routes>
       </div>
     </BrowserRouter>

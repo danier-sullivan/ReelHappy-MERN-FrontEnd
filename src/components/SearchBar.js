@@ -6,7 +6,7 @@ const SearchBar = (props) => {
     <div className='searchBar'>
         <form>
           <input type="text" />
-          <input type="submit" value="submit" />
+          <input type="submit" value="Search" />
         </form>
 
     </div>
