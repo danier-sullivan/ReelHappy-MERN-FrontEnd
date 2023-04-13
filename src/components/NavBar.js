@@ -4,8 +4,9 @@ import SearchBar from './SearchBar'
 const NavBar = (props) => {
     return(
         <div className='nav'>
-            <Link to="/"><div>HOME</div></Link>
-            <Link to="/browse"><div>BROWSE</div></Link>
+            <h1>REEL Happy</h1>
+            <Link to="/"><button>HOME</button></Link>
+            <Link to="/browse"><button>BROWSE</button></Link>
             <SearchBar/>
         </div>
     )
