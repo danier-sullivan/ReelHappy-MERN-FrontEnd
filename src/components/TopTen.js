@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import App from '../App.js';
 import Home from '../pages/Home.js';
+
 const TopTen = ({ data }) => {
   const [movies, setMovies] = useState([]);
 
