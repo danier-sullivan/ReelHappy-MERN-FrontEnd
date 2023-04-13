@@ -1,6 +1,7 @@
  
 body {
   background-image: url("../public/movie3.jpg");
+  overflow: scroll;
   background-size: 2000px;
   border: 2px solid;
   color: #f6bd60;
@@ -10,14 +11,29 @@ body {
 .container {
   justify-content: space-evenly;
 }
+
+h1 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
+
 .nav {
+
   background-color: #d62828;
   text-shadow: #b1a7a6;
-  
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-items: center;
+}
+button {
+  background-color: #ffba08;
+  justify-items: center;
 }
 div {
   color: #000814;
 }
 h2 {
-  
+  font-size: 30px;
+  color: #03071e;
 }

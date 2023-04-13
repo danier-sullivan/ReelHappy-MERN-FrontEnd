@@ -13,7 +13,7 @@ const TopTen = ({ data }) => {
   }, [data]);
 
   return (
-    <div>
+    <div class="container">
       <h2>Top 10/ Most Recent</h2>
       <ul>
         {movies.map((movie) => (
