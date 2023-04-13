@@ -35,6 +35,16 @@ div {
   color: #000814;
 }
 h2 {
-  font-size: 30px;
-  color: #03071e;
+  font-size: 60px;
+  text-align: center;
+  color: #d90429;
+  margin-bottom: 20px;
+}
+.columns {
+  display: flexbox;
+  align-items: stretch;
+  gap: 2em;
+}
+.img {
+  size: small;
 }
