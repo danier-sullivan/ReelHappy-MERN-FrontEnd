@@ -1,16 +1,18 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import {useParams} from "react-router-dom"
 
 const CommentForm=(props)=>{
-console.log(props)
-const [comment, setComment]= useState([])
+
 const [newForm, setNewForm] = useState({
     name: "",
     body: "",
     
   });
+
+  
 // const [comments, setComments]=useState([])
-const URL = `http://localhost:4002/movies/${props.movie.title}/comments`;
+const URL = `http://localhost:4000/movies/${props.movie.title}/comments`;
 
 const createComment = async (comment) => {
     // make post request to create people
@@ -23,7 +25,7 @@ const createComment = async (comment) => {
     });
     //setComment(data.json())
   };
-
+  
   const handleChange = (event) => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
@@ -34,9 +36,8 @@ const createComment = async (comment) => {
     setNewForm({
       name: "",
       body: "",
-      
     });
-    props.setComments(props.movie.comments);
+    props.fetchComments();
   };
 
 return (

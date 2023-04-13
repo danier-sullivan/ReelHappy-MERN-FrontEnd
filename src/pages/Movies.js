@@ -7,6 +7,8 @@ const Movies = () => {
   const url = 'http://localhost:4000/movies';
   const [movies, setMovies] = React.useState(null);
 
+  console.log("cactus")
+
   const getMovies = async () => {
     const response = await fetch(url);
     const data = await response.json();

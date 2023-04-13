@@ -1,6 +1,7 @@
 import React from 'react'
 
 const MovieDisplay=({movie})=>{
+    
     return(
         <div>
             <h1>{movie.title}</h1>
