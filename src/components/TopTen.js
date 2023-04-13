@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-
+import React from 'react';
+import App from '../App.js';
+import Home from '../pages/Home.js';
 const TopTen = ({ data }) => {
   const [movies, setMovies] = useState([]);
 
