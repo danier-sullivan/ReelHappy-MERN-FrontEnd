@@ -1,8 +1,11 @@
  
 body {
   background-image: url("../public/movie3.jpg");
-  background-size: 2000px;
+  background-size: contain;
+  border: 2px solid;
   color: #f6bd60;
+  resize: both;
+  overflow: scroll;
 }
 .container {
   justify-content: space-evenly;
