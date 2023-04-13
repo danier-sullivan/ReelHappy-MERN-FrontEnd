@@ -5,9 +5,9 @@ import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
 import TopTen from './components/TopTen'
 import ViewMovie from './pages/ViewMovie'
-import Home from "./pages/Home"
-import { Route, Routes } from "react-router-dom";
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from './pages/Home';
 
 const  App = () => {
 
@@ -28,16 +28,18 @@ const  App = () => {
     fetchMovies();
   }, []);
     return (
+      <BrowserRouter>
         <div className="App">
           <NavBar />
           {/* <TopTen data={movies}/> */}
           <Routes>
             {/* path = url, element = what page for that url */}
-            <Route path="/" element={<Home movies={movies}/>}/>
+            <Route path="/" element={<Home data={movies}/>}/>
             <Route path='/:title' element={<ViewMovie movies={movies}/>}/>
             <Route path='/Browse' element={<Movies />} />
           </Routes>
         </div>
+      </BrowserRouter>
     );
 }
 

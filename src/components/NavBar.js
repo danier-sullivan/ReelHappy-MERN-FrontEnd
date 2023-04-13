@@ -4,17 +4,11 @@ import SearchBar from './SearchBar'
 const NavBar = (props) => {
     return(
         <div className='nav'>
+            <Link to="/"><div>HOME</div></Link>
+            <Link to="/browse"><div>BROWSE</div></Link>
             <SearchBar/>
-            <Link to="/">
-                <div>HOME</div>
-            </Link>
-            <Link to="/browse">
-                <div>BROWSE</div>
-            </Link>
-        
         </div>
     )
-   
 }
 
 export default NavBar

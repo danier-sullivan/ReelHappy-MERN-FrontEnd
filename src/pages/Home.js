@@ -1,11 +1,8 @@
-import React from "react"
-import TopTen from "../components/TopTen"
-import {useState, useEffect} from "react"
+import TopTen from '../components/TopTen'
+import React from 'react'
 
-const Home=({movies})=>{
-
-    return(
-        <TopTen movies={movies}/>
-    )}
+const Home = ({data}) => {
+    return <TopTen data={data}/>
+}
 
 export default Home;
