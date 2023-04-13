@@ -1,18 +1,19 @@
  
 body {
-  background-image: "moviePic.jpg";
-  background-color: #e5383b;
-  justify-content: center;
+  background-image: url("../public/movie3.jpg");
+  background-size: 2000px;
+  color: #f6bd60;
 }
 .container {
   justify-content: space-evenly;
 }
 .nav {
-  background-color: #161a1d;
+  background-color: #d62828;
   text-shadow: #b1a7a6;
+  
 }
 div {
-  color: #ffffff;
+  color: #000814;
 }
 h2 {
   
