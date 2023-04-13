@@ -6,8 +6,8 @@ const MovieDisplay=({movie})=>{
         <div>
             <h1>{movie.title}</h1>
             <img src={movie.img} alt={movie.title}/>
-            <h2>{movie.years}</h2>
-            <h2>{movie.genres}</h2>
+            <h2>{movie.year}</h2>
+            <h2>{movie.genre}</h2>
         </div>
     )
 }
