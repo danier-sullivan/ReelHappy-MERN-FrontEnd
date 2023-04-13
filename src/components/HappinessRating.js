@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const HappinessRating = ({ onRate }) => {
+const HappinessRating = ({ data }) => {
   const [rating, setRating] = useState(null);
 
   const handleClick = (value) => {
