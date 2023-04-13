@@ -1,7 +1,7 @@
  
 body {
   background-image: url("../public/movie3.jpg");
-  background-size: contain;
+  background-size: 2000px;
   border: 2px solid;
   color: #f6bd60;
   resize: both;
