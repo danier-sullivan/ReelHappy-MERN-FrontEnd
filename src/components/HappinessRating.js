@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 
-const HappinessRating = ({ data }) => {
-  const [rating, setRating] = useState(null);
-
-  const handleClick = (value) => {
-    setRating(value);
- 
-  };
-
+const HappinessRating = (props) => {
   const emojis = [
     { value: 1, symbol: "😿 " },
     { value: 2, symbol: "😾" },
@@ -15,14 +8,35 @@ const HappinessRating = ({ data }) => {
     { value: 4, symbol: "😺" },
     { value: 5, symbol: "😻" },
   ];
+  const [rating, setRating] = useState(null);
+  const [newForm, setNewForm]=useState({rating: undefined})
+
+  const handleClick = (e) => {
+    addRating({[e.target.name]: e.target.value})
+  };
+
+  const addRating=async (rating)=>{
+    await fetch(props.URL+"/rating", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(rating),
+    });
+    props.refreshMovie()
+  }
+
+  
   return (
     <div className="rating-container">
       <div className="emoji">
         {emojis.map((emoji) => (
           <button
             key={emoji.value}
-            onClick={() => handleClick(emoji.value)}
+            onClick={handleClick}
             className={`emoji-button ${emoji.value === rating ? "selected" : ""}`}
+            value={emoji.value}
+            name="rating"
           >
             {emoji.symbol}
           </button>
