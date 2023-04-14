@@ -11,18 +11,6 @@ const HappinessRating = (props) => {
   const [rating, setRating] = useState(null);
   const [hasRated, setHasRated] = useState(false);
 
-  useEffect(() => {
-    // Check if the user has already rated the movie
-    const fetchRating = async () => {
-      const response = await fetch(`${props.URL}/rating`);
-      const data = await response.json();
-      if (data.rating) {
-        setRating(data.rating);
-        setHasRated(true);
-      }
-    };
-    fetchRating();
-  }, []);
 
   const handleClick = (e) => {
 
