@@ -36,7 +36,7 @@ const  App = () => {
             {/* path = url, element = what page for that url */}
             <Route path="/" element={<Home data={movies}/>}/>
             <Route path='/:title' element={<ViewMovie movies={movies}/>}/>
-            <Route path='/Browse' element={<Movies />} />
+            <Route path='/Browse' element={<Movies data={movies}/>} />
           </Routes>
         </div>
       </BrowserRouter>

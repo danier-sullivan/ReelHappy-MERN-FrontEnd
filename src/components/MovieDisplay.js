@@ -1,15 +1,23 @@
 import React from 'react'
-import App from '../App.js';
-const MovieDisplay=({movie})=>{
-    
+import HappinessRating from './HappinessRating';
+
+const MovieDisplay=(props)=>{
+    let avgHappiness=""
+    if (props.movie.avgHappiness){
+        avgHappiness=<h2>Average Rating:{props.movie.avgHappiness}</h2>
+    }
+    else{
+        avgHappiness=<h2>Movie has no scores yet! Be the first to rate it!</h2>
+    }
+
     return(
         <div>
-            <h1>{movie.title}</h1>
-            <img src={movie.img} alt={movie.title}/>
-            <h3>{movie.year}</h3>
-            <h3>{movie.rated}</h3>
-            <h3>{movie.genre}</h3>
-
+            <h1>{props.movie.title}</h1>
+            <img src={props.movie.img} alt={props.movie.title}/>
+            <h2>{props.movie.year}</h2>
+            <h2>{props.movie.genre}</h2>
+            {avgHappiness}
+            <HappinessRating movie={props.movie} refreshMovie={props.refreshMovie} URL={props.URL}/>
         </div>
     )
 }
