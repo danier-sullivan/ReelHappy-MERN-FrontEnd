@@ -7,17 +7,25 @@ import CommentDisplay from "../components/CommentDisplay"
 const ViewMovie=({movies})=>{
     const params=useParams();
     const title=params.title
+    const URL=`http://localhost:4000/movies/${title}`
+    const [movie, setMovie]=useState(movies.find((foundMovie) => foundMovie.title === title))
+    const refreshMovie=async()=>{
+        const response= await fetch(URL)
+        const data=await response.json();
+        setMovie(data);
+    }
+    useEffect(()=>{
+        refreshMovie()
+    },[])
+
     const loaded=()=>{
-        
-        console.log(movies)
-        const movie=movies.find((movie) => movie.title === title);
         console.log(movie)
         return(
-        <>
-        <MovieDisplay movie={movie}/>
-        <CommentDisplay movie={movie}/>
-        </>
-    )}
+            <>
+                <MovieDisplay movie={movie} refreshMovie={refreshMovie} URL={URL}/>
+                <CommentDisplay movie={movie} refreshMovie={refreshMovie} URL={URL}/>
+            </>
+            )}
     const loading=()=>{
         return <h1>Loading...</h1>
     }

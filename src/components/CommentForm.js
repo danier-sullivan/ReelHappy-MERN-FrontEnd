@@ -15,7 +15,6 @@ const [newForm, setNewForm] = useState({
 const URL = `http://localhost:4000/movies/${props.movie.title}/comments`;
 
 const createComment = async (comment) => {
-    // make post request to create people
     await fetch(URL, {
       method: "put",
       headers: {
@@ -23,7 +22,7 @@ const createComment = async (comment) => {
       },
       body: JSON.stringify(comment),
     });
-    //setComment(data.json())
+    props.refreshMovie();
   };
   
   const handleChange = (event) => {
@@ -37,7 +36,7 @@ const createComment = async (comment) => {
       name: "",
       body: "",
     });
-    props.fetchComments();
+    
   };
 
 return (
