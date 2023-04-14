@@ -6,19 +6,24 @@ body {
   border: 2px solid;
   color: #f6bd60;
   resize: both;
-  overflow: scroll;
 }
 .container {
   justify-content: space-evenly;
 }
 
-.nav, h1 {
+.nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   gap: 1rem;
-  margin: 0;
-  padding: 20px;
   background-color: #d90429;
+  font-size: 20px;
+  color:#ffba08;
+  text-shadow: 3px black;
+  font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+  margin: 2px;
+}
+
+h1 {
   font-size: 80px;
   color:#ffba08;
   font-weight: 1400;
@@ -38,6 +43,7 @@ h2 {
   font-size: 60px;
   text-align: center;
   color: #d90429;
+  background-color: #edede9;
   margin-bottom: 20px;
 }
 .columns {
