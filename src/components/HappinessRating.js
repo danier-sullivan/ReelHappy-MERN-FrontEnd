@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const HappinessRating = (props) => {
   const emojis = [
@@ -9,24 +9,41 @@ const HappinessRating = (props) => {
     { value: 5, symbol: "😻" },
   ];
   const [rating, setRating] = useState(null);
-  const [newForm, setNewForm]=useState({rating: undefined})
+  const [hasRated, setHasRated] = useState(false);
+
+  useEffect(() => {
+    // Check if the user has already rated the movie
+    const fetchRating = async () => {
+      const response = await fetch(`${props.URL}/rating`);
+      const data = await response.json();
+      if (data.rating) {
+        setRating(data.rating);
+        setHasRated(true);
+      }
+    };
+    fetchRating();
+  }, []);
 
   const handleClick = (e) => {
-    addRating({[e.target.name]: e.target.value})
+
+    if (!hasRated) {
+      addRating({ rating: e.target.value });
+    }
   };
 
-  const addRating=async (rating)=>{
-    await fetch(props.URL+"/rating", {
+  const addRating = async (rating) => {
+    await fetch(props.URL + "/rating", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(rating),
     });
-    props.refreshMovie()
-  }
+    setRating(rating.rating);
+    setHasRated(true);
+    props.refreshMovie();
+  };
 
-  
   return (
     <div className="rating-container">
       <div className="emoji">
@@ -34,25 +51,26 @@ const HappinessRating = (props) => {
           <button
             key={emoji.value}
             onClick={handleClick}
-            className={`emoji-button ${emoji.value === rating ? "selected" : ""}`}
+            className={`emoji-button ${
+              emoji.value === rating ? "selected" : ""
+            }`}
             value={emoji.value}
-            name="rating"
+            disabled={hasRated}
           >
             {emoji.symbol}
           </button>
         ))}
       </div>
       {rating && (
-        <p className="rating-message">Do we want a message that says you rated {rating} out of 5?</p>
+        <p className="rating-message">
+          You rated {rating} out of 5. Thank you for your rating!
+        </p>
       )}
     </div>
   );
 };
 
-
-
 export default HappinessRating;
-
 
 //func comp =HappinessRating, currently takes prop onRate- called whenever user rates movie
 
