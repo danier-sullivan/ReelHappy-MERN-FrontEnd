@@ -23,6 +23,7 @@ const TopTen = ({ data}) => {
           </li>
         ))}
         </article>
+        </ul>
     </div>
   );
 };
