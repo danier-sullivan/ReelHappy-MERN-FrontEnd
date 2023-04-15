@@ -6,3 +6,4 @@ const Home = ({data}) => {
 }
 
 export default Home;
+
