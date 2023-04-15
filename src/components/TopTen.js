@@ -14,7 +14,7 @@ const TopTen = ({ data }) => {
 
   return (
     <div className="columns">
-      <h2>Top 10 Movies!</h2>
+        <h2>Top 10 Movies!</h2>
       <ul>
         <article className="card">{movies.map(movie => (
           <li key={movie._id}>

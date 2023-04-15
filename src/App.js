@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Movies from './pages/Movies';
@@ -53,6 +54,7 @@ const  App = () => {
   // };
   return (
     <BrowserRouter>
+          <div className="appName">REEL Happy!</div>
       <div className="App">
         <NavBar fetchTitle={fetchTitle}/>
         {/* <TopTen data={movies}/> */}
