@@ -2,12 +2,23 @@
 body {
   background-image: url("../public/movie3.jpg");
   overflow: scroll;
-  background-size: 2000px;
-  background-position: initial;
+  background-size: cover;
+  background-position: center;
   border: 2px solid;
-  color: #f6bd60;
   resize: both;
-  margin: 3em;
+  z-index: 4;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
   z-index: 4;
   cursor: pointer;
 }
@@ -19,36 +30,65 @@ body {
 .nav {
   display: flex;
   justify-content: left;
-  gap: 1rem;
-  background-color: #d90429;
-  font-size: 20px;
-  color:#ffba08;
-  text-shadow: 3px black;
+  gap: 2rem;
+  background-color: #19647e;
+  font-size: 40px;
+  color: #6ccff6;
+  text-shadow: 3px #19647e;
   font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
-  margin: 2px;
+  margin: 8px 8px 8px 8px;
+
 }
 
 h1 {
   font-size: 40px;
-  color:#ffba08;
+  color: #19647e;
   font-weight: 1400;
-  text-shadow: 3px black;
+  text-shadow: 3px #d90429;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+h2 {
+  font-size: 60px;
+  text-decoration: underline;
+  text-align: center;
+  color: #19647e;
+  margin: 30px;
+  background-color: #e3dc95;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:justify;
+  color: #0b3954;
+  
 }
 
 button {
-  background-color: #ffba08;
-  justify-items: center;
-  size: 30px;
+  background-color: #e3dc95;
+  justify-items: left;
+  font-size: 15px;
+  margin: 10px;
 }
-div {
-  color: #000814;
+
+.search {
+  justify-items: end;
 }
-h2 {
-  font-size: 60px;
+
+.happy {
+  font-family: cursive;
+  font-size: 30px;
+  color: #f16812;
+}
+
+.commentDisplay {
+  background-color:#e3dc95;
+  font-size: 20px;
   text-align: justify;
-  color: #d90429;
-  margin-bottom: 20px;
+  color: #19647e;
+  margin: 30px;
 }
 
 .columns {
@@ -58,5 +98,13 @@ h2 {
 }
 .movieTitle {
   gap: 2em;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.showMovie {
+  color: #19647e;
+  background-color: #e3dc95;
+  font-size: 20px;
+  margin: 100px;
+  align-items: self-start;
 }

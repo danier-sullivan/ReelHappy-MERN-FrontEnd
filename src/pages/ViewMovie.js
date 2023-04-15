@@ -38,3 +38,4 @@ const ViewMovie = ({movies}) => {
   };
   
   export default ViewMovie;
+

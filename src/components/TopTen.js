@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import App from '../App.js';
 import {Link} from "react-router-dom"
-const TopTen = ({ data}) => {
+
+const TopTen = ({ data }) => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const sortedData = data.sort(
