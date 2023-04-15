@@ -10,7 +10,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import "./App.css"
 
-const App = () => {
+
+const  App = () => {
+  const URL = process.env.REACT_APP_BASE_URL
+
   const [movies, setMovies] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -33,6 +36,7 @@ const App = () => {
       console.error(error);
     }
   };
+
 
   useEffect(() => {
     fetchMovies();

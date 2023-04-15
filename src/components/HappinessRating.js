@@ -20,7 +20,7 @@ const HappinessRating = (props) => {
   };
 
   const addRating = async (rating) => {
-    await fetch(props.URL + "/rating", {
+    await fetch(props.url + "/rating", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
