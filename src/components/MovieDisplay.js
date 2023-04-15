@@ -11,7 +11,7 @@ const MovieDisplay=(props)=>{
     }
 
     return(
-        <div>
+        <div className = "showMovie">
             <h1>{props.movie.title}</h1>
             <img src={props.movie.img} alt={props.movie.title}/>
             <h2>{props.movie.year}</h2>

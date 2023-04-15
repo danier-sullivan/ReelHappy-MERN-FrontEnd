@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const HappinessRating = (props) => {
   const emojis = [
-    { value: 1, symbol: "😿 " },
+    { value: 1, symbol: "😿" },
     { value: 2, symbol: "😾" },
     { value: 3, symbol: "😼" },
     { value: 4, symbol: "😺" },
