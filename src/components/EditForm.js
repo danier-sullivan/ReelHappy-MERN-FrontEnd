@@ -15,7 +15,7 @@ const [newForm, setNewForm] = useState({
 // const [comments, setComments]=useState([])
 
 const updateComment = async (comment) => {
-    await fetch(props.url+`/comments/${props.commentID}/edit`, {
+    await fetch(props.url+`/comments/${props.commentId}/edit`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
