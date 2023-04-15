@@ -1,3 +1,8 @@
+import React from "react"
+import {useState, useEffect} from "react"
+import {useParams} from "react-router-dom"
+import MovieDisplay from "../components/MovieDisplay"
+import CommentDisplay from "../components/CommentDisplay"
 
 const ViewMovie=({movies})=>{
     const params=useParams();
