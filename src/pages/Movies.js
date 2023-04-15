@@ -4,8 +4,8 @@ import { useState } from 'react-router-dom';
 const Movies = ({data}) => {
   
   return (
-      <div>
-        <h1>This is where we keep the movies</h1>
+      <div class="showAll">
+        <h1>Here are the movies that have been searched so far</h1>
         <ul>
           {data.map((movie) => (
             <li key={movie.id}>

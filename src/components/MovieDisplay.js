@@ -17,7 +17,7 @@ const MovieDisplay=(props)=>{
             <h2>{props.movie.year}</h2>
             <h2>{props.movie.genre}</h2>
             {avgHappiness}
-            <HappinessRating movie={props.movie} refreshMovie={props.refreshMovie} URL={props.URL}/>
+            <HappinessRating movie={props.movie} refreshMovie={props.refreshMovie} url={props.url}/>
         </div>
     )
 }

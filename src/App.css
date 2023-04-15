@@ -3,10 +3,15 @@ body {
   background-image: url("../public/movie3.jpg");
   overflow: scroll;
   background-size: 2000px;
+  background-position: initial;
   border: 2px solid;
   color: #f6bd60;
   resize: both;
+  margin: 3em;
+  z-index: 4;
+  cursor: pointer;
 }
+
 .container {
   justify-content: space-evenly;
 }
@@ -24,7 +29,7 @@ body {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 40px;
   color:#ffba08;
   font-weight: 1400;
   text-shadow: 3px black;
@@ -41,16 +46,17 @@ div {
 }
 h2 {
   font-size: 60px;
-  text-align: center;
+  text-align: justify;
   color: #d90429;
-  background-color: #edede9;
   margin-bottom: 20px;
 }
+
 .columns {
   display: flexbox;
   align-items: stretch;
   gap: 2em;
 }
-.img {
-  size: small;
+.movieTitle {
+  gap: 2em;
+  font-size: 30px;
 }
