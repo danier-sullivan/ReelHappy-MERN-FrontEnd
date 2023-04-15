@@ -2,11 +2,19 @@
 body {
   background-image: url("../public/movie3.jpg");
   overflow: scroll;
-  background-size: cover;
-  background-position: center;
+  background-size: inherit;
+  background-position: top;
   border: 2px solid;
   resize: both;
   z-index: 4;
+}
+.appName {
+  font-family:monospace;
+  font-style: oblique;
+  text-align: right;
+  font-size: 40px;
+  color: #087e8b;
+  margin-right: 10px;
 }
 
 #overlay {
