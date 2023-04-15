@@ -89,6 +89,7 @@ button {
   text-align: justify;
   color: #19647e;
   margin: 30px;
+  padding: 40px;
 }
 
 .columns {
@@ -107,4 +108,5 @@ button {
   font-size: 20px;
   margin: 100px;
   align-items: self-start;
+  padding: 40px;
 }
