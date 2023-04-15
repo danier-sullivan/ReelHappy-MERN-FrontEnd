@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import App from '../App.js';
 import {Link} from "react-router-dom"
-
 const TopTen = ({ data}) => {
   const [movies, setMovies] = useState([]);
-
   useEffect(() => {
     const sortedData = data.sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
     setMovies(sortedData.slice(0, 10));
   }, [data]);
-
   return (
     <div className="columns">
       <h2>Top 10 Movies!</h2>
@@ -23,8 +20,8 @@ const TopTen = ({ data}) => {
           </li>
         ))}
         </article>
+        </ul>
     </div>
   );
 };
-
 export default TopTen;
