@@ -77,6 +77,11 @@ button {
   justify-items: end;
 }
 
+.happy {
+  font-family: cursive;
+  font-size: 30px;
+  color: #f16812;
+}
 
 .commentDisplay {
   background-color:#e3dc95;

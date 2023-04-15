@@ -4,10 +4,10 @@ import HappinessRating from './HappinessRating';
 const MovieDisplay=(props)=>{
     let avgHappiness=""
     if (props.movie.avgHappiness){
-        avgHappiness=<h2>Average Rating:{props.movie.avgHappiness}</h2>
+        avgHappiness=<div className= "happy">Average Happiness Rating: {props.movie.avgHappiness}</div>
     }
     else{
-        avgHappiness=<h2>Movie has no scores yet! Be the first to rate it!</h2>
+        avgHappiness=<h3>Movie has no scores yet! Be the first to rate it!</h3>
     }
 
     return(
