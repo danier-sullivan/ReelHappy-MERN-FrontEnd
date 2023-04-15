@@ -46,6 +46,24 @@ h1 {
   font-weight: 1400;
   text-shadow: 3px #d90429;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+h2 {
+  font-size: 60px;
+  text-decoration: underline;
+  text-align: center;
+  color: #19647e;
+  margin: 30px;
+  background-color: #e3dc95;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:justify;
+  color: #0b3954;
+  
 }
 
 button {
@@ -59,13 +77,7 @@ button {
   justify-items: end;
 }
 
-h2 {
-  font-size: 60px;
-  text-align: justify;
-  color: #19647e;
-  margin: 30px;
-  background-color: #e3dc95;
-}
+
 .commentDisplay {
   background-color:#e3dc95;
   font-size: 20px;

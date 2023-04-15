@@ -14,9 +14,9 @@ const MovieDisplay=(props)=>{
         <div className = "showMovie">
             <h1>{props.movie.title}</h1>
             <img src={props.movie.img} alt={props.movie.title}/>
-            <h2>{props.movie.year}</h2>
-            <h2>{props.movie.genre}</h2>
-            {avgHappiness}
+            <h3>{props.movie.year}</h3>
+            <h3>{props.movie.genre}</h3>
+            <h3>{avgHappiness}</h3>
             <HappinessRating movie={props.movie} refreshMovie={props.refreshMovie} url={props.url}/>
         </div>
     )
