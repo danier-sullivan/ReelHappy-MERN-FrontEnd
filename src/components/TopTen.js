@@ -13,17 +13,15 @@ const TopTen = ({ data}) => {
   }, [data]);
 
   return (
-    <div class="columns">
+    <div classname="columns">
       <h2>Top 10 Movies!</h2>
-      <ul>
-        <article class="card">{movies.map(movie => (
-          <li key={movie._id}>
-            <h3>{movie.title}</h3>
-            <Link to={`/${movie.title}`}><img src={movie.img} alt={movie.title} /></Link>
+          <article classname="card">{movies.map(movie => (
+            <li key={movie._id}>
+              <div classname= "movieTitle"><h3>{movie.title}</h3></div>
+              <div classname= "movieLink"><Link to={`/${movie.title}`}><img src={movie.img} alt={movie.title} /></Link></div>
           </li>
         ))}
         </article>
-      </ul>
     </div>
   );
 };
