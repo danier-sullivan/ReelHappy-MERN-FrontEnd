@@ -5,11 +5,11 @@ const Movies = ({data}) => {
   
   return (
       <div class="showAll">
-        <h1>Here are the movies that have been searched so far</h1>
+        <h2>Movie Collection</h2>
         <ul>
           {data.map((movie) => (
             <li key={movie.id}>
-              <h2>{movie.title}</h2>
+              <h3>{movie.title}</h3>
               <img src={movie.img} alt={movie.title} />
             </li>
           ))}

@@ -13,10 +13,9 @@ const [newForm, setNewForm] = useState({
 
   
 // const [comments, setComments]=useState([])
-const URL = `http://localhost:4000/movies/${props.movie.title}/comments/${props.commentId}/edit`;
 
 const updateComment = async (comment) => {
-    await fetch(URL, {
+    await fetch(props.url+`/comments/${props.commentID}/edit`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
