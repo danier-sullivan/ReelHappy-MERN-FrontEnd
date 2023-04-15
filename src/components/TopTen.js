@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import App from '../App.js';
 import {Link} from "react-router-dom"
 
-const TopTen = ({ data}) => {
+const TopTen = ({ data }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const TopTen = ({ data}) => {
 
   return (
     <div className="columns">
-      <h2>Top 10 Movies!</h2>
+        <h2>Top 10 Movies!</h2>
       <ul>
         <article className="card">{movies.map(movie => (
           <li key={movie._id}>
@@ -23,7 +23,7 @@ const TopTen = ({ data}) => {
           </li>
         ))}
         </article>
-      </ul>
+        </ul>
     </div>
   );
 };

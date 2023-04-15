@@ -8,12 +8,13 @@ import ViewMovie from './pages/ViewMovie'
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
+import "./App.css"
+
 
 const  App = () => {
-
+  const URL = process.env.REACT_APP_BASE_URL
   const [movies, setMovies] = useState([]);
   const [movie, setMovie]=useState(null)
-  const URL = process.env.REACT_APP_BASE_URL
   console.log(URL)
 
 
@@ -28,7 +29,7 @@ const  App = () => {
       }
     };
 
-  useEffect(() =>{
+  useEffect(() => {
     fetchMovies();
   }, []);
 
@@ -47,9 +48,4 @@ const  App = () => {
       </BrowserRouter>
     );
 }
-
-
 export default App;
-
-//Is there a way to avoid wrapping in browser router?  
-

@@ -31,7 +31,8 @@ const ViewMovie=({movies})=>{
     const loading=()=>{
         return <h1>Loading...</h1>
     }
-    return (movies ? loaded(): loading())
+    return movies ? (movie ? loaded() : loading()) : loading();
 }
 
 export default ViewMovie;
+

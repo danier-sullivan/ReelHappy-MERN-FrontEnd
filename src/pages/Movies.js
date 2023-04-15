@@ -4,12 +4,12 @@ import { useState } from 'react-router-dom';
 const Movies = ({data}) => {
   
   return (
-      <div>
-        <h1>This is where we keep the movies</h1>
+      <div class="showAll">
+        <h2>Movie Collection</h2>
         <ul>
           {data.map((movie) => (
             <li key={movie.id}>
-              <h2>{movie.title}</h2>
+              <h3>{movie.title}</h3>
               <img src={movie.img} alt={movie.title} />
             </li>
           ))}
