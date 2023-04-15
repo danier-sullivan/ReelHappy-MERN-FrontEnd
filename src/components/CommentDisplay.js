@@ -6,12 +6,12 @@ import CommentForm from "./CommentForm"
 const CommentDisplay=(props)=>{
     
     return(
-        <>
-        <CommentForm movie={props.movie} refreshMovie={props.refreshMovie} URL={props.url}/>
+        <div className="commentDisplay">
+        <CommentForm movie={props.movie} refreshMovie={props.refreshMovie} URL={props.URL}/>
         {props.movie.comments.map((comment)=>{
-            return <Comment key={comment._id}  comment={comment}/>
+            return <Comment key={comment._id}  movie={props.movie} refreshMovie={props.refreshMovie} comment={comment} URL={props.URL}/>
         })}
-    </>)
+    </div>)
 }
 
 export default CommentDisplay;
