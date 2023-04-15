@@ -1,41 +1,65 @@
-// imports useState hook
-import { useState } from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import {useEffect} from 'react'
 
-// functional comp SearchBar-takes data and handleSeardh as props,
-// useState sets variables of searchTerm and filteredMovies, 
-// setSearchTerm and setfilter are the functions that update the state of aformentioned variables
-const SearchBar = ({ data, handleSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredMovies, setFilteredMovies] = useState([]);
+const SearchBar = (props) => {
+  const navigate=useNavigate()
+  const [movie, setMovie]=useState(null)
+  const [formData, setFormData] = useState({
+    searchterm: "",
+  });
 
-  console.log(data)
-
-  // handleChange function should be called when input field changes- event object gives it new search term, calls handleSearch with user input to get filtered results
+  const fetchTitle= async (searchTerm) => {
+    try {
+      const response = await fetch(`${props.url}${searchTerm}`);
+      const data = await response.json();
+      setMovie(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const handleChange = (event) => {
-    const newSearchTerm = event.target.value;
-    setSearchTerm(newSearchTerm);
-    const results = handleSearch(newSearchTerm);
-    setFilteredMovies(results);
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetchTitle(formData.searchterm);
+    console.log(movie)
+    // if (movie){
+    //   navigate(`/${movie.title}`, {
+    //     state: {
+    //         movies: [movie],
+    //     }},)
+    // }
+    
+  };
+  useEffect(() => {
+    if (movie) { 
+     navigate(`/${movie.title}`, 
+        {state: {
+          movies: [movie],
+        }});
+    }}, [movie])
+  // const getMovie= (searchterm)=>{
+  //   props.fetchTitle(searchterm);
+  // }
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={handleChange}
-      />
-     
-      {filteredMovies.map((movie) => (
-        <div key={movie.id}>
-          <h1>{movie.title}</h1>
-  
-        </div>
-      ))}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="searchterm"
+          onChange={handleChange}
+          value={formData.searchterm}
+        />
+        <input type="submit" value="submit" />
+      </form>
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchBar
