@@ -9,8 +9,8 @@ const MovieDisplay=(props)=>{
     else{
         avgHappiness=<h2>Movie has no scores yet! Be the first to rate it!</h2>
     }
+
     return(
-        
         <div>
             <h1>{props.movie.title}</h1>
             <img src={props.movie.img} alt={props.movie.title}/>
