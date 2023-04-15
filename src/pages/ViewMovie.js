@@ -7,10 +7,10 @@ import CommentDisplay from "../components/CommentDisplay"
 const ViewMovie=({movies})=>{
     const params=useParams();
     const title=params.title
-    const URL=`http://localhost:4000/movies/${title}`
+    const url=`http://localhost:4000/movies/${title}`
     const [movie, setMovie]=useState(movies.find((foundMovie) => foundMovie.title === title))
     const refreshMovie=async()=>{
-        const response= await fetch(URL)
+        const response= await fetch(url)
         const data=await response.json();
         setMovie(data);
     }
@@ -22,8 +22,8 @@ const ViewMovie=({movies})=>{
         console.log(movie)
         return(
             <>
-                <MovieDisplay movie={movie} refreshMovie={refreshMovie} URL={URL}/>
-                <CommentDisplay movie={movie} refreshMovie={refreshMovie} URL={URL}/>
+                <MovieDisplay movie={movie} refreshMovie={refreshMovie} url={url}/>
+                <CommentDisplay movie={movie} refreshMovie={refreshMovie} url={url}/>
             </>
             )}
     const loading=()=>{
