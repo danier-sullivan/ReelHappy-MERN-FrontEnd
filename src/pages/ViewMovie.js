@@ -10,15 +10,15 @@ const ViewMovie=({movies})=>{
     const title=params.title
     const showUrl=process.env.REACT_APP_BASE_URL+title
     console.log(showUrl)
-    const [movie, setMovie]=useState(movies.find((movie)=>movie.title===title))
+    const [movie, setMovie]=useState(null)
     const refreshMovie=async()=>{
         const response= await fetch(showUrl)
         const data=await response.json();
-        await setMovie(data);
+        setMovie(data);
     }
     useEffect(()=>{
         refreshMovie()
-    },[movie])
+    },[title])
 
     const loaded=()=>{
         console.log(movie)
