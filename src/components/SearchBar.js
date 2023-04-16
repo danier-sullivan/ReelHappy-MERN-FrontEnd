@@ -7,16 +7,16 @@ import {useEffect} from 'react'
 
 const SearchBar = (props) => {
   const navigate=useNavigate()
-  const [movie, setMovie]=useState(null)
+  const [movie, setMovie]=useState([])
   const [formData, setFormData] = useState({
     searchterm: "",
   });
 
   const fetchTitle= async (searchTerm) => {
     try {
-      const response = await fetch(`${props.url}${searchTerm}`);
+      const response = await fetch(`http://localhost:4000/movies/${searchTerm}`);
       const data = await response.json();
-      setMovie(data);
+      await setMovie(data);
     } catch (error) {
       console.error(error);
     }
@@ -28,7 +28,7 @@ const SearchBar = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchTitle(formData.searchterm);
-    console.log(movie)
+    //console.log(movie)
     // if (movie){
     //   navigate(`/${movie.title}`, {
     //     state: {
@@ -38,7 +38,9 @@ const SearchBar = (props) => {
     
   };
   useEffect(() => {
+    console.log(movie)
     if (movie) { 
+    let title=movie.title.replace(" ", "%20")
      navigate(`/${movie.title}`, 
         {state: {
           movies: [movie],
