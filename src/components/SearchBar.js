@@ -4,9 +4,11 @@ import {Navigate} from 'react-router-dom'
 import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 
 const SearchBar = (props) => {
   const navigate=useNavigate()
+  let location=useLocation()
   const [movie, setMovie]=useState([])
   const [formData, setFormData] = useState({
     searchterm: "",
@@ -40,12 +42,22 @@ const SearchBar = (props) => {
   useEffect(() => {
     console.log(movie)
     if (movie) { 
-    let title=movie.title.replace(" ", "%20")
+      console.log(location.pathname)
+    // let title=movie.title.replace(" ", "%20")
+    if (location.pathname==='/'|| location.pathname==="/browse"){
      navigate(`/${movie.title}`, 
         {state: {
           movies: [movie],
-        }});
-    }}, [movie])
+        },
+        replace: true});
+    }
+    else {
+      navigate(`./${movie.title}`, 
+        {state: {
+          movies: [movie],
+        },
+        replace: true});
+    }}}, [movie]);
   // const getMovie= (searchterm)=>{
   //   props.fetchTitle(searchterm);
   // }
