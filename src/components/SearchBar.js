@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Navigate} from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useEffect} from 'react'
@@ -18,8 +18,9 @@ const SearchBar = (props) => {
     try {
       const response = await fetch(`http://localhost:4000/movies/${searchTerm}`);
       const data = await response.json();
-      await setMovie(data);
-    } catch (error) {
+      await setMovie(data)
+    } 
+    catch (error) {
       console.error(error);
     }
   };
@@ -45,22 +46,21 @@ const SearchBar = (props) => {
       console.log(location.pathname)
     // let title=movie.title.replace(" ", "%20")
     if (location.pathname==='/'|| location.pathname==="/browse"){
-     navigate(`/${movie.title}`, 
+      navigate(`/${movie.title}`,
         {state: {
-          movies: [movie],
-        },
-        replace: true});
+          movies: [movie]
+         },
+        replace: false});
     }
-    else {
-      navigate(`./${movie.title}`, 
+    else if (movie.title!==undefined) {
+      navigate(`./${movie.title}`,
         {state: {
-          movies: [movie],
+          movies: [movie]
         },
-        replace: true});
-    }}}, [movie]);
-  // const getMovie= (searchterm)=>{
-  //   props.fetchTitle(searchterm);
-  // }
+        replace: false});
+    }
+  }}, [movie]);
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
