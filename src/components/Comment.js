@@ -32,7 +32,7 @@ const Comment=(props)=>{
             <p>{props.comment.body}</p>
             <button onClick={handleDeleteOnClick}>Delete</button>
             <button onClick={handleEditOnClick}>Edit</button>
-            {editing && <EditForm movie={props.movie} refreshMovie={props.refreshMovie} commentId={props.comment._id} setEditing={setEditing} name={props.comment.name} body={props.comment.body}/>}
+            {editing && <EditForm movie={props.movie} refreshMovie={props.refreshMovie} commentId={props.comment._id} setEditing={setEditing} name={props.comment.name} body={props.comment.body} url={props.url}/>}
         </div>
         </div>/*}*/
     )

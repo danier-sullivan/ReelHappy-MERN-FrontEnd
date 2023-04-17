@@ -1,25 +1,22 @@
 import React from 'react';
-import { useState } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Movies = ({data}) => {
-  
+const Movies = ({ data }) => {
   return (
-      <div class="showAll">
-        <h2>Movie Collection</h2>
-        <ul>
-          {data.map((movie) => (
-            <li key={movie.id}>
-              <h3>{movie.title}</h3>
+    <div class="showAll">
+      <h2>Movie Collection</h2>
+      <ul>
+        {data.map((movie) => (
+          <li key={movie.id}>
+            <h3>{movie.title}</h3>
+            <Link to={`/${movie.title}`}>
               <img src={movie.img} alt={movie.title} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
-
-
-
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Movies;

@@ -1,4 +1,3 @@
-
 import React from "react"
 import {useState, useEffect} from "react"
 import {useParams} from "react-router-dom"
@@ -11,7 +10,7 @@ const ViewMovie=({movies})=>{
     const title=params.title
     const showUrl=process.env.REACT_APP_BASE_URL+title
     console.log(showUrl)
-    const [movie, setMovie]=useState(movies.find((foundMovie) => foundMovie.title === title))
+    const [movie, setMovie]=useState(null)
     const refreshMovie=async()=>{
         const response= await fetch(showUrl)
         const data=await response.json();
@@ -19,7 +18,7 @@ const ViewMovie=({movies})=>{
     }
     useEffect(()=>{
         refreshMovie()
-    },[])
+    },[title])
 
     const loaded=()=>{
         console.log(movie)
@@ -36,3 +35,4 @@ const ViewMovie=({movies})=>{
 }
 
 export default ViewMovie;
+
