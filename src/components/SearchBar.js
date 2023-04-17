@@ -1,23 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Navigate} from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 
 const SearchBar = (props) => {
   const navigate=useNavigate()
-  const [movie, setMovie]=useState(null)
+  let location=useLocation()
+  const [movie, setMovie]=useState([])
   const [formData, setFormData] = useState({
     searchterm: "",
   });
 
   const fetchTitle= async (searchTerm) => {
     try {
-      const response = await fetch(`${props.url}${searchTerm}`);
+      const response = await fetch(`http://localhost:4000/movies/${searchTerm}`);
       const data = await response.json();
-      setMovie(data);
-    } catch (error) {
+      await setMovie(data)
+    } 
+    catch (error) {
       console.error(error);
     }
   };
@@ -28,7 +31,7 @@ const SearchBar = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchTitle(formData.searchterm);
-    console.log(movie)
+    //console.log(movie)
     // if (movie){
     //   navigate(`/${movie.title}`, {
     //     state: {
@@ -38,15 +41,26 @@ const SearchBar = (props) => {
     
   };
   useEffect(() => {
+    console.log(movie)
     if (movie) { 
-     navigate(`/${movie.title}`, 
+      console.log(location.pathname)
+    // let title=movie.title.replace(" ", "%20")
+    if (location.pathname==='/'|| location.pathname==="/browse"){
+      navigate(`/${movie.title}`,
         {state: {
-          movies: [movie],
-        }});
-    }}, [movie])
-  // const getMovie= (searchterm)=>{
-  //   props.fetchTitle(searchterm);
-  // }
+          movies: [movie]
+         },
+        replace: false});
+    }
+    else if (movie.title!==undefined) {
+      navigate(`./${movie.title}`,
+        {state: {
+          movies: [movie]
+        },
+        replace: false});
+    }
+  }}, [movie]);
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
