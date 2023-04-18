@@ -61,4 +61,4 @@ return (
   );
 };
 
-export default EditForm;
+export default EditForm
