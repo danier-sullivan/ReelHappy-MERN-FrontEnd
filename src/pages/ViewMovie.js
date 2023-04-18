@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
-import {useParams} from "react-router-dom"
+import {Navigate, useParams} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import MovieDisplay from "../components/MovieDisplay"
 import CommentDisplay from "../components/CommentDisplay"
 const ViewMovie = ({movies}) => {
@@ -30,6 +31,7 @@ const ViewMovie = ({movies}) => {
     return movies ? (movie ? loaded() : loading()) : loading();
   };
   export default ViewMovie;
+
 
 
 
