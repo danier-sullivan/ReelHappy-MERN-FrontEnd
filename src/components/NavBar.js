@@ -7,7 +7,8 @@ const NavBar = (props) => {
     return(
         <div className='nav'>
             <Link to="/"><button>HOME</button></Link>
-            <Link to="/browse"><button>BROWSE</button></Link><SearchBar/>
+            <Link to="/browse"><button>BROWSE</button></Link>
+            <SearchBar url={props.url}/>
         </div>
     )
 }
