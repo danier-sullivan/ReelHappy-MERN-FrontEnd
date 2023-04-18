@@ -20,3 +20,5 @@ const Movies = ({ data }) => {
 };
 
 export default Movies;
+
+//comment for sake of commit
