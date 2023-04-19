@@ -14,16 +14,21 @@ const TopTen = ({ data }) => {
   
   return (
     <div className="columns">
-        <h2>Top 10 Movies!</h2>
+      <h2>Top 10 Movies!</h2>
       <ul>
-        <article className="card">{movies.map(movie => (
-          <li key={movie._id}>
-            <h3>{movie.title}</h3>
-            <Link to={`/${movie.title}`}><img src={movie.img} alt={movie.title} /></Link>
-          </li>
-        ))}
+        <article className="card">
+          {movies.map(movie => (
+            <li key={movie._id}>
+              <h3>{movie.title}</h3>
+              <Link to={`/${movie.title}`}>
+                <div className="toptenimage">
+                  <img src={movie.img} alt={movie.title} />
+                </div>
+              </Link>
+            </li>
+          ))}
         </article>
-        </ul>
+      </ul>
     </div>
   );
 };
