@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-  const HappinessRating = (props) => {
+const HappinessRating = (props) => {
   const emojis = [
     { value: 1, symbol: "😿" },
     { value: 2, symbol: "😾" },
@@ -8,13 +8,11 @@ import React, { useState, useEffect } from "react";
     { value: 4, symbol: "😺" },
     { value: 5, symbol: "😻" },
   ];
- 
+
   const [rating, setRating] = useState(null);
   const [hasRated, setHasRated] = useState(false);
 
-
   const handleClick = (e) => {
-
     if (!hasRated) {
       addRating({ rating: e.target.value });
     }
@@ -35,7 +33,6 @@ import React, { useState, useEffect } from "react";
 
   return (
     <div className="rating-container">
-      
       <div className="emoji">
         CHOOSE YOUR HAPPINESS RATING:
         <br></br>
@@ -43,9 +40,7 @@ import React, { useState, useEffect } from "react";
           <button
             key={emoji.value}
             onClick={handleClick}
-            className={`emoji-button ${
-              emoji.value === rating ? "selected" : ""
-            }`}
+            className={`emoji-button ${emoji.value === rating ? "selected" : ""}`}
             value={emoji.value}
             disabled={hasRated}
           >
@@ -63,6 +58,7 @@ import React, { useState, useEffect } from "react";
 };
 
 export default HappinessRating;
+
 
 //func comp =HappinessRating, currently takes prop onRate- called whenever user rates movie
 
