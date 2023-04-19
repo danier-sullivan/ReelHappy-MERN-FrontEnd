@@ -2,7 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
-import TopTen from './components/TopTen'
 import ViewMovie from './pages/ViewMovie'
 import About from './pages/About';
 
