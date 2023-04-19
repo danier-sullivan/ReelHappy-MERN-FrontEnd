@@ -143,34 +143,3 @@ button {
   height: 75px;
 }
 
-<<<<<<< HEAD
-
-.movieList {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(300px, auto));
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.movieImages {
-  width: 200px;
-  height: 300px;
-  overflow: hidden;
-}
-
-.movieImages img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-=======
-.showAll {
-  background-color: #e3dc95bd;
-  margin: 10px;
-  align-items: self-start;
-  z-index: 4;
-  
->>>>>>> 4ec7182f1ccb69028fce818fa7c7b7db9d0bf440
-}
