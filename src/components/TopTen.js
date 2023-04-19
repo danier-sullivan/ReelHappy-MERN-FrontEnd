@@ -20,11 +20,11 @@ const TopTen = ({ data }) => {
           {movies.map(movie => (
             <li key={movie._id}>
               <h3>{movie.title}</h3>
-              <Link to={`/${movie.title}`}>
-                <div className="toptenimage">
+              <div className="toptenimage">
+                <Link to={`/${movie.title}`}>
                   <img src={movie.img} alt={movie.title} />
-                </div>
-              </Link>
+                </Link>
+              </div>
             </li>
           ))}
         </article>
