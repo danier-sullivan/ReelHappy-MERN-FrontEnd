@@ -9,6 +9,7 @@ const NavBar = (props) => {
             <img className="logo" src="banner.png"/>
             <Link to="/"><button>HOME</button></Link>
             <Link to="/browse"><button>BROWSE</button></Link>
+            <Link to="/about"><button>ABOUT</button></Link>
             <SearchBar url={props.url}/>
         </div>
     )
