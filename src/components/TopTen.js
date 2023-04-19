@@ -6,14 +6,12 @@ const TopTen = ({ data }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    if (data){
-      const sortedData = data.sort(
-        (a, b) => {if(a.avgHappiness && b.avgHappiness){return (a.avgHappiness) - (b.avgHappiness)}}
-      );
-      setMovies(sortedData.slice(0, 10));
-    }
+    const sortedData = data
+      .filter(movie => movie.avgHappiness !== undefined)
+      .sort((a, b) => b.avgHappiness - a.avgHappiness);
+    setMovies(sortedData.slice(0, 10));
   }, [data]);
-
+  
   return (
     <div className="columns">
         <h2>Top 10 Movies!</h2>
