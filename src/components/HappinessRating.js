@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const HappinessRating = (props) => {
+  const HappinessRating = (props) => {
   const emojis = [
     { value: 1, symbol: "😿" },
     { value: 2, symbol: "😾" },
@@ -8,6 +8,7 @@ const HappinessRating = (props) => {
     { value: 4, symbol: "😺" },
     { value: 5, symbol: "😻" },
   ];
+ 
   const [rating, setRating] = useState(null);
   const [hasRated, setHasRated] = useState(false);
 
@@ -34,7 +35,10 @@ const HappinessRating = (props) => {
 
   return (
     <div className="rating-container">
+      
       <div className="emoji">
+        CHOOSE YOUR HAPPINESS RATING:
+        <br></br>
         {emojis.map((emoji) => (
           <button
             key={emoji.value}
