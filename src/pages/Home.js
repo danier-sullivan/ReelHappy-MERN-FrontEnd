@@ -1,7 +1,7 @@
 import TopTen from '../components/TopTen'
 import React from 'react'
 import {useEffect} from 'react'
-import { PromiseProvider } from 'mongoose'
+// import { PromiseProvider } from 'mongoose'
 
 
 const Home = ({data, fetchMovies, url}) => {
