@@ -44,8 +44,20 @@ body {
   text-shadow: 3px #19647e;
   font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
   margin: 8px 8px 8px 8px;
-
 }
+
+.emoji {
+  background-color: #19647e;
+  color: #6ccff6;
+  text-decoration: double;
+  padding: 30px 30px 30px 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.emoji-button {
+  font-size: 60px;
+}
+
 
 h1 {
   font-size: 40px;
