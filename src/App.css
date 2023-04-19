@@ -201,17 +201,6 @@ textarea {
   margin: 0;
 }
 
-.movieList {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(180px, 1fr));
-  grid-template-rows: repeat(3, 520px);
-  grid-auto-rows: 520px;
-  list-style: none;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-}
-
 .movieImages {
   position: relative;
   width: 100%;
@@ -242,3 +231,20 @@ textarea {
   padding: 10px;
   border-radius: 5px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .movieList {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .movieList:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .movieImages img {
+    width: 100%;
+    height: auto;
+  }
+}
+
