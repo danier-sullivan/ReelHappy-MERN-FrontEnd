@@ -43,21 +43,22 @@ const createComment = async (comment) => {
 return (
     <div className="Comments">
       <form onSubmit={handleSubmit}>
-      <label for = "Name">Share your Name</label>
-        <div class="row">
-          <div class="six columns">
+        <div className="commentTitle">
+          <label for = "Name">Share your Name:  </label>
+       
         <input
           type="text"
           name="name"
           onChange={handleChange}
           value={newForm.name}
           placeholder="Commenter Name"
-        /></div>
+        />
         </div>
-        <label for = "Comment">Add Your Comment</label>
+        <br></br>
+        <label for = "Comment">Add Your Comment:  </label>
         <br></br>
         
-        <textarea class="u-full-width" placeholder="Your Thoughts Here" id="exampleMessage"      
+        <textarea class="full-width" placeholder="Your Thoughts Here" id="exampleMessage"      
             name="body"
             onChange={handleChange}
             value={newForm.body}>
