@@ -126,12 +126,18 @@ button {
 }
 
 .commentDisplay {
-  background-color:#e3dc95;
-  font-size: 20px;
+  background-color:#e3dc95dd;
+  font-size: 30px;
   text-align: justify;
   color: #19647e;
   margin: 30px;
   padding: 40px;
+}
+
+textarea {
+  width: 80%;
+  height: 40px;
+  text-justify: center;
 }
 
 .columns {
@@ -147,7 +153,7 @@ button {
 
 .showMovie {
   color: #19647e;
-  background-color: #e3dc95;
+  background-color: #e3dc95dd;
   font-size: 20px;
   margin: 30px;
   align-items: self-start;
