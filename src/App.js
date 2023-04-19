@@ -15,7 +15,7 @@ const  App = () => {
   const URL = process.env.REACT_APP_BASE_URL
   const [movies, setMovies] = useState([]);
   const [movie, setMovie]=useState(null)
-  console.log(URL)
+  //console.log(URL)
 
 
 
@@ -40,9 +40,10 @@ const  App = () => {
           {/* <TopTen data={movies}/> */}
           <Routes>
             {/* path = url, element = what page for that url */}
-            <Route path="/" element={<Home data={movies} url={URL}/>}/>
-            <Route path='/:title' element={<ViewMovie movies={movies} url={URL}/>}/>
+            <Route path="/" element={<Home data={movies} fetchMovies={fetchMovies} url={URL}/>}/>
             <Route path='/Browse' element={<Movies data={movies} url={URL}/>} />
+            <Route path='/:title' element={<ViewMovie movies={movies} url={URL}/>}/>
+            
           </Routes>
         </div>
       </BrowserRouter>

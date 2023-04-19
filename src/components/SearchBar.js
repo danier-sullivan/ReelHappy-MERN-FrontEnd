@@ -43,23 +43,23 @@ const SearchBar = (props) => {
   useEffect(() => {
     console.log(movie)
     if (movie) { 
-      console.log(location.pathname)
+      if (movie.title!==undefined){
     // let title=movie.title.replace(" ", "%20")
-    if (location.pathname==='/'|| location.pathname==="/browse"){
-      navigate(`/${movie.title}`,
-        {state: {
-          movies: [movie]
-         },
-        replace: false});
-    }
-    else if (movie.title!==undefined) {
-      navigate(`./${movie.title}`,
-        {state: {
-          movies: [movie]
-        },
-        replace: false});
-    }
-  }}, [movie]);
+        if (location.pathname==='/'|| location.pathname==="/browse"){
+          navigate(`/${movie.title}`,
+            {state: {
+              movies: [movie]
+            },
+            replace: false});
+        }
+        else {
+          navigate(`./${movie.title}`,
+            {state: {
+              movies: [movie]
+            },
+            replace: false});
+        }
+      }}}, [movie]);
   
   return (
     <div>

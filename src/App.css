@@ -118,3 +118,14 @@ button {
   align-items: self-start;
   padding: 40px;
 }
+
+.carousel {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo{
+  height: 75px;
+}
