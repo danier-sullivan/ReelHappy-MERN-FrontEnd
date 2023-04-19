@@ -5,14 +5,14 @@ import EditForm from "./EditForm"
 const Comment=(props)=>{
     const [editing, setEditing]=useState(false)
     const url=props.url
-    console.log(props.url)
+    //console.log(props.url)
     const handleDeleteOnClick=()=>{
         deleteComment(props.comment)
     }
     const handleEditOnClick=()=>{
         setEditing(!editing)
     }
-    console.log(editing)
+    //console.log(editing)
     useEffect(()=>{
         setEditing(false);
     }, [])
