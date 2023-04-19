@@ -1,6 +1,4 @@
 
- 
-
 import React from 'react'
 import { Link, redirect } from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
@@ -19,8 +17,11 @@ const SearchBar = (props) => {
 
   const fetchTitle= async (searchTerm) => {
     try {
-      const response = await fetch(`http://localhost:4000/movies/${searchTerm}`);
+      const response = await fetch(`${props.url}${searchTerm}`);
+      console.log(`props.url${searchTerm}`)
+      
       const data = await response.json();
+      console.log(data)
       await setMovie(data)
     } 
     catch (error) {
@@ -34,17 +35,9 @@ const SearchBar = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchTitle(formData.searchterm);
-    //console.log(movie)
-    // if (movie){
-    //   navigate(`/${movie.title}`, {
-    //     state: {
-    //         movies: [movie],
-    //     }},)
-    // }
     
   };
   useEffect(() => {
-    console.log(movie)
     if (movie) { 
       if (movie.title!==undefined){
     // let title=movie.title.replace(" ", "%20")
