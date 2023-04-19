@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Movies from './pages/Movies'
 import TopTen from './components/TopTen'
 import ViewMovie from './pages/ViewMovie'
+import About from './pages/About';
 
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -43,6 +44,7 @@ const  App = () => {
             <Route path="/" element={<Home data={movies} url={URL}/>}/>
             <Route path='/:title' element={<ViewMovie movies={movies} url={URL}/>}/>
             <Route path='/Browse' element={<Movies data={movies} url={URL}/>} />
+            <Route path='/About' element={<About/>} />
           </Routes>
         </div>
       </BrowserRouter>
