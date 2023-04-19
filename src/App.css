@@ -7,6 +7,7 @@ body {
   resize: both;
   z-index: 4;
 }
+
 .appName {
   font-family:monospace;
   font-style: oblique;
@@ -116,6 +117,7 @@ button {
   align-items: stretch;
   gap: 2em;
 }
+
 .movieTitle {
   gap: 2em;
   font-size: 20px;
@@ -125,7 +127,7 @@ button {
   color: #19647e;
   background-color: #e3dc95;
   font-size: 20px;
-  margin: 100px;
+  margin: 30px;
   align-items: self-start;
   padding: 40px;
 }
@@ -139,4 +141,12 @@ button {
 
 .logo{
   height: 75px;
+}
+
+.showAll {
+  background-color: #e3dc95bd;
+  margin: 10px;
+  align-items: self-start;
+  z-index: 4;
+  
 }
