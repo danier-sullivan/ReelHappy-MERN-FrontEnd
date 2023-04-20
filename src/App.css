@@ -1,13 +1,14 @@
 
 #about{
   padding:50px;
-  position: absolute;
+  /* position: absolute;
   top: 60%;
-  left: 50%;
+  left: 50%; */
   font-size: 50px;
   color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+  margin: 20px auto;
+  /* transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); */
   background-color: white;
   opacity: .8;
   
@@ -39,8 +40,8 @@ body {
 }
 
 #overlay {
-  position: fixed;
-  display: none;
+  /* position: fixed; */
+  /* display: none; */
   width: 100%;
   height: 100%;
   top: 0;
@@ -58,13 +59,15 @@ body {
 
 .nav {
   display: flex;
-  justify-content: left;
-  gap: 2rem;
+  justify-content: space-between;
+  /* gap: 2rem; */
   background-color: #19647e;
   font-size: 40px;
+  flex-flow: row wrap;
   color: #6ccff6;
   text-shadow: 3px #19647e;
   font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+  padding-right: 10px;
   margin: 8px 8px 8px 8px;
 }
 
@@ -202,7 +205,7 @@ textarea {
 }
 
 .movieImages {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   overflow: hidden;
