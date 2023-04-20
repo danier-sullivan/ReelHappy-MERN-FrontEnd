@@ -89,12 +89,13 @@ body {
 
 
 h1 {
-  font-size: 40px;
+  font-size: 60px;
   color: #19647e;
   font-weight: 1400;
   text-shadow: 3px #d90429;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  background-color: #e3dc95;
 }
 
 h2 {
@@ -102,11 +103,12 @@ h2 {
   text-align: center;
   color: #19647e;
   background-color: #e3dc95;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h3 {
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align:justify;
   color: #0b3954;
   
@@ -165,11 +167,16 @@ textarea {
 }
 
 .carousel {
-  width: 50%;
+  max-width: 50%;
   height: 500px;
   display: flex;
   justify-content: center;
+  grid-template-columns: auto;
+  background-color: #e3dc95bd;
+  background-position-y: center;
+  scroll-margin: 50%;
 }
+
 
 .logo{
   height: 75px;
