@@ -15,8 +15,11 @@ const MovieDisplay = (props) => {
 
   return (
     <div className="showMovie">
-      <h1>{props.movie.title}</h1>
+      <div className="movieTitle">
+        <h1>{props.movie.title}</h1></div>
+      <div className="eachMovie">
       <img src={props.movie.img} alt={props.movie.title} />
+      </div>
       <h3>{props.movie.year}</h3>
       <div>
         {props.movie.genre.map((genre, index) => (
