@@ -1,33 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import App from '../App.js';
+import {Link} from "react-router-dom"
 
-function Carousel({ images }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const TopTen = ({ data }) => {
+  const [movies, setMovies] = useState([]);
 
-  function showNextImage() {
-    if (currentImageIndex === images.length - 1) {
-      setCurrentImageIndex(0);
-    } else {
-      setCurrentImageIndex(currentImageIndex + 1);
-    }
-  }
-
-  function showPrevImage() {
-    if (currentImageIndex === 0) {
-      setCurrentImageIndex(images.length - 1);
-    } else {
-      setCurrentImageIndex(currentImageIndex - 1);
-    }
-  }
-
+  useEffect(() => {
+    const sortedData = data
+      .filter(movie => movie.avgHappiness !== undefined)
+      .sort((a, b) => b.avgHappiness - a.avgHappiness);
+    setMovies(sortedData.slice(0, 10));
+  }, [data]);
+  
   return (
-    <div className="carousel">
-      <img src={images[currentImageIndex]} alt="Carousel Image" />
-      <div className="carousel-controls">
-        <button onClick={showPrevImage}>Prev</button>
-        <button onClick={showNextImage}>Next</button>
-      </div>
+    <div className="columns">
+      <h2>Top Happy Movies!</h2>
+      <ul>
+        <article className="card">
+          {movies.map(movie => (
+            <li key={movie._id}>
+              <h3>{movie.title}</h3>
+              <div className="toptenimage">
+                <Link to={`/${movie.title}`}>
+                  <img src={movie.img} alt={movie.title} />
+                </Link>
+              </div>
+            </li>
+          ))}
+        </article>
+      </ul>
     </div>
   );
-}
+};
 
-export default Carousel;
+export default TopTen;
