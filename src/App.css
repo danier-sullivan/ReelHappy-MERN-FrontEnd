@@ -9,21 +9,17 @@
   -ms-transform: translate(-50%,-50%);
   background-color: white;
   opacity: .8;
-  
 }
 
 #abouth1{
   text-align: center;
 }
 
-
-
 body {
   background-image: url("../public/movie3.jpg");
   overflow: scroll;
   background-size: inherit;
   background-position: top;
-  border: 2px solid;
   resize: both;
   z-index: 4;
 }
