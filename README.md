@@ -1,4 +1,5 @@
 # REEL Happy
+https://reel-happy.herokuapp.com/
 
 A full stack application developed as a group using the MERN (Mongoose, Express, React, and Node.js) stack. Reel Happy adhered to the MVC (Models, Views and Controllers) file structure on the backend.  Developers applied full CRUD to the movie review page. The site pulls from the server-side OMDB API to provide movie information. The application is deployed using Heroku.
 
