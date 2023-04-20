@@ -40,24 +40,33 @@ const updateComment = async (comment) => {
   };
 
 return (
-    <div>
+      <div className="Comments">
       <form onSubmit={handleSubmit}>
+        <div className="commentTitle">
+          <br></br>
+          <label for = "Name">Update the Name: </label>
         <input
           type="text"
           name="name"
           onChange={handleChange}
           value={newForm.name}
+          placeholder="Update Name"
         />
-        <input
-            type="textarea"
+        </div>
+        
+        <label for = "Comment">Update the Comment: </label>
+        <br></br>
+
+        <textarea class="full-width" placeholder="Update Comment" id="exampleMessage"
             name="body"
             onChange={handleChange}
-            value={newForm.body}
-        />
-        <input type="submit" value="submit" />
+            value={newForm.body}>
+        </textarea>
+        <br></br>
+        <input type="submit" value="submit"/>
         <button>Cancel</button>
       </form>
-    </div>
+      </div>
   );
 };
 
