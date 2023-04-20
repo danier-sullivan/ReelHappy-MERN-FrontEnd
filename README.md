@@ -34,5 +34,3 @@ Wireframes
 <img width="635" alt="Screenshot 2023-04-05 at 11 44 27 AM" src="https://user-images.githubusercontent.com/119551269/233232530-41df9a56-6f59-473a-89f9-7c36500d251c.png">
 <img width="641" alt="Screenshot 2023-04-05 at 11 44 00 AM" src="https://user-images.githubusercontent.com/119551269/233232439-f66ea9c2-a2e0-4f15-860e-9f7b03c78987.png">
 
-A README.md file with explanations of the technologies used, the approach taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc
-Have a link to your hosted working app in the README.md file in your github repo
