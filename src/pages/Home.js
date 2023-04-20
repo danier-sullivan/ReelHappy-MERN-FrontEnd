@@ -1,18 +1,20 @@
-import TopTen from '../components/TopTen'
-import React from 'react'
-import {useEffect} from 'react'
-// import { PromiseProvider } from 'mongoose'
 
 
-const Home = ({data, fetchMovies, url}) => {
-    useEffect(()=>{
-        fetchMovies();
-    }, [])
+import React from 'react';
+import Carousel from '../components/Carousel';
 
-    return (
-        <div>
-            < TopTen data={data}/>
-        </div>
-)}
+function Home({ data }) {
+  const topTenImages = data
+    .filter(movie => movie.avgHappiness !== undefined)
+    .sort((a, b) => b.avgHappiness - a.avgHappiness)
+    .slice(0, 10)
+    .map(movie => movie.img);
+
+  return (
+    <div>
+      <Carousel images={topTenImages} />
+    </div>
+  );
+}
 
 export default Home;
