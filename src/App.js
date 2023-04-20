@@ -44,6 +44,7 @@ const  App = () => {
             <Route path='/:title' element={<ViewMovie movies={movies} url={URL}/>}/>
             <Route path='/Browse' element={<Movies data={movies} url={URL}/>} />
             <Route path='/About' element={<About/>} />
+
           </Routes>
         </div>
       </BrowserRouter>
