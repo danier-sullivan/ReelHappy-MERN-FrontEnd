@@ -1,4 +1,3 @@
-
 #about{
   padding:50px;
   /* position: absolute;
@@ -107,10 +106,8 @@ h1 {
 
 h2 {
   font-size: 60px;
-  text-decoration: underline;
   text-align: center;
   color: #19647e;
-  margin: 30px;
   background-color: #e3dc95;
 }
 
@@ -187,7 +184,7 @@ textarea {
 
 .showAll {
   background-color: #e3dc95bd;
-  margin: 10px;
+  margin: 5% 5% 5% 5%;
   align-items: self-start;
   z-index: 4;
   
@@ -201,7 +198,7 @@ textarea {
   list-style: none;
   gap: 10px;
   padding: 0;
-  margin: 0;
+  margin: 7% 7% 7% 7%;
 }
 
 .movieImages {
@@ -250,4 +247,3 @@ textarea {
     height: auto;
   }
 }
-
