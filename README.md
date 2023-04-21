@@ -28,8 +28,7 @@ User Stories:
     As a user I want to be able to see comments about a movie
       
 Wireframes
-    <img width="643" alt="Screenshot 2023-04-05 at 11 43 01 AM" src="https://user-images.githubusercontent.com/119551269/233232225-60f16df2-9267-454c-8c4c-28a540407164.png">
-<img width="639" alt="Screenshot 2023-04-05 at 11 43 21 AM" src="https://user-images.githubusercontent.com/119551269/233232290-62f0f1c2-ce64-48ec-9301-e05bb678e53d.png">
+<img width="643" alt="Screenshot 2023-04-05 at 11 43 01 AM" src="https://user-images.githubusercontent.com/119551269/233232225-60f16df2-9267-454c-8c4c-28a540407164.png">
 <img width="638" alt="Screenshot 2023-04-05 at 7 11 17 PM" src="https://user-images.githubusercontent.com/119551269/233232338-8ed7820b-63da-4856-9593-7f6c5fbb786e.png">
 <img width="642" alt="Screenshot 2023-04-05 at 11 44 15 AM" src="https://user-images.githubusercontent.com/119551269/233232486-dc952f22-9620-475b-b682-ae93093b0638.png">
 <img width="635" alt="Screenshot 2023-04-05 at 11 44 27 AM" src="https://user-images.githubusercontent.com/119551269/233232530-41df9a56-6f59-473a-89f9-7c36500d251c.png">
