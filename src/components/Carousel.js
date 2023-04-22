@@ -1,36 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import App from '../App.js';
-import {Link} from "react-router-dom"
+// import React, { useState } from 'react';
 
-const TopTen = ({ data }) => {
-  const [movies, setMovies] = useState([]);
+// function Carousel({ images }) {
+//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    const sortedData = data
-      .filter(movie => movie.avgHappiness !== undefined)
-      .sort((a, b) => b.avgHappiness - a.avgHappiness);
-    setMovies(sortedData.slice(0, 10));
-  }, [data]);
-  
+//   function showNextImage() {
+//     if (currentImageIndex === images.length - 1) {
+//       setCurrentImageIndex(0);
+//     } else {
+//       setCurrentImageIndex(currentImageIndex + 1);
+//     }
+//   }
+
+//   function showPrevImage() {
+//     if (currentImageIndex === 0) {
+//       setCurrentImageIndex(images.length - 1);
+//     } else {
+//       setCurrentImageIndex(currentImageIndex - 1);
+//     }
+//   }
+
+//   return (
+//     <div className="carousel">
+//       <div className="carousel-image-container">
+//         <img src={images[currentImageIndex]} alt="Carousel Image" />
+//         <div className="carousel-controls">
+//           <div className="arrow left-arrow" onClick={showPrevImage}></div>
+//           <div className="arrow right-arrow" onClick={showNextImage}></div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Carousel;
+
+
+import React, { useState } from 'react';
+
+function Carousel({ images }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  function showNextImage() {
+    if (currentImageIndex === images.length - 1) {
+      setCurrentImageIndex(0);
+    } else {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+  }
+
+  function showPrevImage() {
+    if (currentImageIndex === 0) {
+      setCurrentImageIndex(images.length - 1);
+    } else {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+  }
+
   return (
-    <div className="columns">
-      <h2>Top Happy Movies!</h2>
-      <ul>
-        <article className="card">
-          {movies.map(movie => (
-            <li key={movie._id}>
-              <h3>{movie.title}</h3>
-              <div className="toptenimage">
-                <Link to={`/${movie.title}`}>
-                  <img src={movie.img} alt={movie.title} />
-                </Link>
-              </div>
-            </li>
-          ))}
-        </article>
-      </ul>
+    <div className="carousel">
+      <div className="carousel-image-container">
+        <img src={images[currentImageIndex]} alt="Carousel Image" />
+        <div className="carousel-controls">
+          <div className="arrow left-arrow" onClick={showPrevImage}></div>
+          <div className="arrow right-arrow" onClick={showNextImage}></div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default TopTen;
+export default Carousel;

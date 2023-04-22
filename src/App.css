@@ -166,16 +166,6 @@ textarea {
   padding: 40px;
 }
 
-.carousel {
-  max-width: 50%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  grid-template-columns: auto;
-  background-color: #e3dc95bd;
-  background-position-y: center;
-  scroll-margin: 50%;
-}
 
 
 .logo{
@@ -246,4 +236,62 @@ textarea {
     width: 100%;
     height: auto;
   }
+}
+
+.carousel {
+  max-width: 50%;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3dc95bd;
+  background-position-y: center;
+  scroll-margin: 50%;
+}
+
+.carousel-image-container {
+  position: relative;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  border: 7px solid #19647e;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin: 0 -80px; 
+}
+
+.left-arrow {
+  border-top: none;
+  border-right: none;
+  margin-right: 50px;
+}
+
+.right-arrow {
+  border-bottom: none;
+  border-left: none;
+  margin-left: 50px;
 }
