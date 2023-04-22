@@ -1,12 +1,13 @@
 #about{
   padding:50px;
-  position: absolute;
+  /* position: absolute;
   top: 60%;
-  left: 50%;
+  left: 50%; */
   font-size: 50px;
   color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+  margin: 20px auto;
+  /* transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); */
   background-color: white;
   opacity: .8;
 }
@@ -34,8 +35,8 @@ body {
 }
 
 #overlay {
-  position: fixed;
-  display: none;
+  /* position: fixed; */
+  /* display: none; */
   width: 100%;
   height: 100%;
   top: 0;
@@ -53,13 +54,15 @@ body {
 
 .nav {
   display: flex;
-  justify-content: left;
-  gap: 2rem;
+  justify-content: space-between;
+  /* gap: 2rem; */
   background-color: #19647e;
   font-size: 40px;
+  flex-flow: row wrap;
   color: #6ccff6;
   text-shadow: 3px #19647e;
   font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+  padding-right: 10px;
   margin: 8px 8px 8px 8px;
 }
 
@@ -166,6 +169,24 @@ textarea {
   padding: 40px;
 }
 
+.carousel {
+  max-width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* grid-template-columns: auto; */
+  background-color: #e3dc95bd;
+  /* background-position-y: center; */
+  /* scroll-margin: 50%; */
+}
+
+.carousel-btn {
+  font-size: 80px;
+  color: #19647e;
+  background-color: #ffffff00;
+  border: none;
+}
 
 
 .logo{
@@ -177,22 +198,22 @@ textarea {
   margin: 5% 5% 5% 5%;
   align-items: self-start;
   z-index: 4;
-  
+  flex: 1;
 }
 
 .movieList {
   display: grid;
-  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
   grid-template-rows: repeat(3, 520px);
   grid-auto-rows: 520px;
   list-style: none;
-  gap: 10px;
+  gap: 20px 10px;
   padding: 0;
   margin: 7% 7% 7% 7%;
 }
 
 .movieImages {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -231,67 +252,11 @@ textarea {
   .movieList:not(:last-child) {
     margin-bottom: 10px;
   }
-
+  #overlay{
+    margin: 0 auto;
+  }
   .movieImages img {
     width: 100%;
     height: auto;
   }
-}
-
-.carousel {
-  max-width: 50%;
-  height: 500px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e3dc95bd;
-  background-position-y: center;
-  scroll-margin: 50%;
-}
-
-.carousel-image-container {
-  position: relative;
-}
-
-.carousel-container {
-  display: flex;
-  justify-content: center;
-}
-
-.carousel img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  left: 0;
-  right: 0;
-}
-
-.arrow {
-  width: 30px;
-  height: 30px;
-  border: 7px solid #19647e;
-  transform: rotate(45deg);
-  cursor: pointer;
-  margin: 0 -80px; 
-}
-
-.left-arrow {
-  border-top: none;
-  border-right: none;
-  margin-right: 50px;
-}
-
-.right-arrow {
-  border-bottom: none;
-  border-left: none;
-  margin-left: 50px;
 }

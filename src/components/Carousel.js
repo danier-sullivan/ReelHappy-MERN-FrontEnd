@@ -58,13 +58,11 @@ function Carousel({ images }) {
 
   return (
     <div className="carousel">
-      <div className="carousel-image-container">
-        <img src={images[currentImageIndex]} alt="Carousel Image" />
-        <div className="carousel-controls">
-          <div className="arrow left-arrow" onClick={showPrevImage}></div>
-          <div className="arrow right-arrow" onClick={showNextImage}></div>
-        </div>
-      </div>
+      <button className="carousel-btn left" onClick={showPrevImage}>&lt;</button>
+      <img src={images[currentImageIndex]} alt="Carousel Image" />
+      {/* <div className="carousel-controls"> */}
+      <button className="carousel-btn right" onClick={showNextImage}>&gt;</button>
+      {/* </div> */}
     </div>
   );
 }
