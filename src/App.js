@@ -6,6 +6,7 @@ import ViewMovie from './pages/ViewMovie'
 import About from './pages/About';
 
 
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import "./App.css"
@@ -40,7 +41,7 @@ const  App = () => {
           {/* <TopTen data={movies}/> */}
           <Routes>
             {/* path = url, element = what page for that url */}
-            <Route path="/" element={<Home data={movies} url={URL}/>}/>
+            <Route path="/" element={<Home data={movies} url={URL} fetchMovies={fetchMovies}/>}/>
             <Route path='/:title' element={<ViewMovie movies={movies} url={URL}/>}/>
             <Route path='/Browse' element={<Movies data={movies} url={URL}/>} />
             <Route path='/About' element={<About/>} />

@@ -21,11 +21,11 @@ function Carousel({ images }) {
 
   return (
     <div className="carousel">
+      <button className="carousel-btn left" onClick={showPrevImage}>&lt;</button>
       <img src={images[currentImageIndex]} alt="Carousel Image" />
-      <div className="carousel-controls">
-        <button onClick={showPrevImage}>Prev</button>
-        <button onClick={showNextImage}>Next</button>
-      </div>
+      {/* <div className="carousel-controls"> */}
+      <button className="carousel-btn right" onClick={showNextImage}>&gt;</button>
+      {/* </div> */}
     </div>
   );
 }

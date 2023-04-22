@@ -1,12 +1,13 @@
 #about{
   padding:50px;
-  position: absolute;
+  /* position: absolute;
   top: 60%;
-  left: 50%;
+  left: 50%; */
   font-size: 50px;
   color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+  margin: 20px auto;
+  /* transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); */
   background-color: white;
   opacity: .8;
 }
@@ -34,8 +35,8 @@ body {
 }
 
 #overlay {
-  position: fixed;
-  display: none;
+  /* position: fixed; */
+  /* display: none; */
   width: 100%;
   height: 100%;
   top: 0;
@@ -53,13 +54,15 @@ body {
 
 .nav {
   display: flex;
-  justify-content: left;
-  gap: 2rem;
+  justify-content: space-between;
+  /* gap: 2rem; */
   background-color: #19647e;
   font-size: 40px;
+  flex-flow: row wrap;
   color: #6ccff6;
   text-shadow: 3px #19647e;
   font-family:'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+  padding-right: 10px;
   margin: 8px 8px 8px 8px;
 }
 
@@ -169,12 +172,20 @@ textarea {
 .carousel {
   max-width: 50%;
   height: 500px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  grid-template-columns: auto;
+  /* grid-template-columns: auto; */
   background-color: #e3dc95bd;
-  background-position-y: center;
-  scroll-margin: 50%;
+  /* background-position-y: center; */
+  /* scroll-margin: 50%; */
+}
+
+.carousel-btn {
+  font-size: 80px;
+  color: #19647e;
+  background-color: #ffffff00;
+  border: none;
 }
 
 
@@ -196,13 +207,13 @@ textarea {
   grid-template-rows: repeat(3, 520px);
   grid-auto-rows: 520px;
   list-style: none;
-  gap: 10px;
+  gap: 20px 10px;
   padding: 0;
   margin: 7% 7% 7% 7%;
 }
 
 .movieImages {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -241,7 +252,9 @@ textarea {
   .movieList:not(:last-child) {
     margin-bottom: 10px;
   }
-
+  #overlay{
+    margin: 0 auto;
+  }
   .movieImages img {
     width: 100%;
     height: auto;
