@@ -172,12 +172,20 @@ textarea {
 .carousel {
   max-width: 50%;
   height: 500px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  grid-template-columns: auto;
+  /* grid-template-columns: auto; */
   background-color: #e3dc95bd;
-  background-position-y: center;
-  scroll-margin: 50%;
+  /* background-position-y: center; */
+  /* scroll-margin: 50%; */
+}
+
+.carousel-btn {
+  font-size: 80px;
+  color: #19647e;
+  background-color: #ffffff00;
+  border: none;
 }
 
 
@@ -244,7 +252,9 @@ textarea {
   .movieList:not(:last-child) {
     margin-bottom: 10px;
   }
-
+  #overlay{
+    margin: 0 auto;
+  }
   .movieImages img {
     width: 100%;
     height: auto;
