@@ -11,9 +11,14 @@ function Home({ data }) {
     .map(movie => movie.img);
 
   return (
+    <div className="topHappy">
+      <h1>Reel-y Happy Movies!</h1>
     <div>
+    <div className="carousel">
       <Carousel images={topTenImages} />
+      </div>
     </div>
+  </div>
   );
 }
 
